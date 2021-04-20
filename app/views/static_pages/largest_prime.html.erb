@@ -1,8 +1,9 @@
 <div style="text-align: center">
   <h1>Find the largest prime factor of any number!</h1>
+  <h5>(except negative numbers though, as they cannot, by definition, be prime)</h5>
   <%= form_with url: largest_prime_path, method: :post do %>
-    <%= label_tag "Enter a number!" %>
-    <%= number_field_tag "number", nil %> <%# the text field tag name in quotes must equal the instance variable params name, caps and all %>
+    <%= label_tag "Enter number" %>
+    <%= number_field_tag "number", nil, options = {:required => true, :min => 0} %> <%# the text field tag name in quotes must equal the instance variable params name, caps and all %>
     <%= submit_tag "Check" %>
   <% end %>
 </div>

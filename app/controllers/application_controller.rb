@@ -46,7 +46,10 @@ class ApplicationController < ActionController::Base
 
   def largest_prime_check
     @input = params[:number].to_i
-    if @input > 101 
+
+    if @input === 0
+      return @answer = "#{@input} has infinite factors!"
+    elsif @input > 101 
       new_number = Integer.sqrt(@input).round
     else
       new_number = @input/2
