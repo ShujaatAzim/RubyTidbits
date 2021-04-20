@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'static_pages#tidbits'
+  get '/palindrome', to: "static_pages#palindrome", as: "palindrome"
+  post '/palindrome', to: "application#palindrome_check", as: "palindrome_check"
+  get '/guessing_game', to: "static_pages#guessing_game", as: "guessing_game"
+  post '/guessing_game', to: "application#guessing_game_check", as: "guessing_game_check"
 end

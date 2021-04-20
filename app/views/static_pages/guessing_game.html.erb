@@ -1,0 +1,8 @@
+<div style="text-align: center">
+  <h1>Guessing Game!</h1>
+  <%= form_with url: guessing_game_path, method: :post do %>
+    <%= label_tag "Guess a number between 1 and 6" %>
+    <%= text_field_tag "string", nil %> <%# the text field tag name in quotes must equal the instance variable params name, caps and all %>
+    <%= submit_tag "Check" %>
+  <% end %>
+</div>
