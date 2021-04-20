@@ -43,5 +43,30 @@ class ApplicationController < ActionController::Base
     end
   end
   helper_method :guessing_game
+
+  def largest_prime_check
+    @input = params[:number].to_i
+    if @input > 101 
+      new_number = Integer.sqrt(@input).round
+    else
+      new_number = @input/2
+    end
+  
+    factors = []
+    primes = []
+  
+    for num in (2..new_number) 
+      if @input % num == 0
+        factors.push(num)
+      end
+    end
+  
+    factors.each do |num|
+      if (1..num).select { |d| num % d == 0 } == [1, num]
+        primes.push(num)
+      end
+    end
+    return @answer = "The largest prime factor of #{@input} is #{primes.max}!"
+  end
   
 end

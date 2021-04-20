@@ -9,4 +9,7 @@ class StaticPagesController < ApplicationController
   def guessing_game
   end
 
+  def largest_prime
+  end
+
 end
