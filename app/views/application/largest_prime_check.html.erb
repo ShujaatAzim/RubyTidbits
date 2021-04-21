@@ -1,6 +1,14 @@
 <div style="text-align: center">
   <h1><%= @answer %></h1>
-  <%= link_to "Try Another!", largest_prime_path %>
+  <br />
+    <%= form_with url: largest_prime_path, method: :post do %>
+    <%= label_tag "Enter another number" %>
+    <%= number_field_tag "number", nil, options = {:required => true, :min => 0} %> <%# the text field tag name in quotes must equal the instance variable params name, caps and all %>
+    <%= submit_tag "Try another!" %>
+  <% end %>
+  <br />
+  <br />
+  <%= link_to "Tidbits List", tidbits_path %>
   <br />
   <br />
   <h2>Explanation:</h2>

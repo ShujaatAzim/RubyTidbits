@@ -1,7 +1,8 @@
 <div style="text-align: center">
   <h1>Palindrome Checker</h1>
+  <p>Enter a string to see if it's a palindrome!</p>
   <%= form_with url: palindrome_path, method: :post do %>
-    <%= label_tag "String" %>
+    <%= label_tag "String:" %>
     <%= text_field_tag "string", nil %> <%# the text field tag name in quotes must equal the instance variable params name, caps and all %>
     <%= submit_tag "Check" %>
   <% end %>

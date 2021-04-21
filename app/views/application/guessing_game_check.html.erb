@@ -1,6 +1,12 @@
 <div style="text-align: center">
   <h1><%= @answer %></h1>
-  <%= link_to "Try Another!", guessing_game_path %>
+    <%= form_with url: guessing_game_path, method: :post do %>
+    <%= label_tag "Guess again!" %>
+    <%= number_field_tag "guess", nil, options = {:required => true, :min => 0} %>
+    <%= submit_tag "Check" %>
+  <% end %>
+  <br />
+  <%= link_to "Tidbits List", tidbits_path %>
   <br />
   <br />
   <h2>Explanation:</h2>

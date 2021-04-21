@@ -54,21 +54,22 @@ class ApplicationController < ActionController::Base
   end
 
   def dice_roll_check
-    @roll = rand(6) + 1
-    case
-      when @roll == 1 
-        return @answer = { "roll": @roll, "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Alea_1.png" }
-      when @roll == 2 
-        return @answer = { "roll": @roll, "image": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Alea_2.png" }
-      when @roll == 3 
-        return @answer = { "roll": @roll, "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Alea_3.png" }
-      when @roll == 4 
-        return @answer = { "roll": @roll, "image": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Alea_4.png" }
-      when @roll == 5 
-        return @answer = { "roll": @roll, "image": "https://upload.wikimedia.org/wikipedia/commons/5/55/Alea_5.png" }
-      when @roll == 6 
-        return @answer = { "roll": @roll, "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Alea_6.png" }
-    end
+    dice_images = {
+      1 => "https://upload.wikimedia.org/wikipedia/commons/2/2c/Alea_1.png",
+      2 => "https://upload.wikimedia.org/wikipedia/commons/b/b8/Alea_2.png",
+      3 => "https://upload.wikimedia.org/wikipedia/commons/2/2f/Alea_3.png",
+      4 => "https://upload.wikimedia.org/wikipedia/commons/8/8d/Alea_4.png",
+      5 => "https://upload.wikimedia.org/wikipedia/commons/5/55/Alea_5.png",
+      6 => "https://upload.wikimedia.org/wikipedia/commons/f/f4/Alea_6.png"
+    }
+
+    # if dice_number == 1
+      @roll = rand(6) + 1
+      return @answer = { "roll": @roll, "image": dice_images[@roll] }
+    # else
+      # @roll1 = rand(6) + 1
+      # @roll2 = rand(6) + 1
+
   end
 
 end
