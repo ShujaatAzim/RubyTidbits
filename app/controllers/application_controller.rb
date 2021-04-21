@@ -54,6 +54,7 @@ class ApplicationController < ActionController::Base
   end
 
   def dice_roll_check
+    @dice_number = params[:dice_number].to_i
     dice_images = {
       1 => "https://upload.wikimedia.org/wikipedia/commons/2/2c/Alea_1.png",
       2 => "https://upload.wikimedia.org/wikipedia/commons/b/b8/Alea_2.png",
@@ -63,13 +64,14 @@ class ApplicationController < ActionController::Base
       6 => "https://upload.wikimedia.org/wikipedia/commons/f/f4/Alea_6.png"
     }
 
-    # if dice_number == 1
+    if @dice_number == 1
       @roll = rand(6) + 1
-      return @answer = { "roll": @roll, "image": dice_images[@roll] }
-    # else
-      # @roll1 = rand(6) + 1
-      # @roll2 = rand(6) + 1
-
+      return @answer = { "dice_number": @dice_number, "roll": @roll, "image": dice_images[@roll] }
+    else
+      @roll1 = rand(6) + 1
+      @roll2 = rand(6) + 1
+      return @answer ={ "dice_number": @dice_number, "roll1": @roll1, "roll2": @roll2, "total": @roll1 + @roll2, "image1": dice_images[@roll1], "image2": dice_images[@roll2] }
+    end
   end
 
 end

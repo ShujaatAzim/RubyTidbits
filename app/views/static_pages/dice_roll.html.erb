@@ -1,6 +1,8 @@
 <div style="text-align: center">
   <h1>Dice Roll!</h1>
-  <%= button_to "Roll", dice_roll_check_path %>
+  <%= button_to "Roll One Die", dice_roll_check_path(dice_number: 1) %>
+  <br />
+  <%= button_to "Roll Two Dice", dice_roll_check_path(dice_number: 2) %>
   <br />
   <br />
   <%= link_to "Tidbits List", tidbits_path %>
