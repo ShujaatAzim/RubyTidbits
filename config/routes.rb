@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   post '/guessing_game', to: "application#guessing_game_check", as: "guessing_game_check"
   get '/largest_prime', to: "static_pages#largest_prime", as: "largest_prime"
   post '/largest_prime', to: "application#largest_prime_check", as: "largest_prime_check"
+  get '/dice_roll', to: "static_pages#dice_roll", as: "dice_roll"
+  post '/dice_roll', to: "application#dice_roll_check", as: "dice_roll_check"
 end

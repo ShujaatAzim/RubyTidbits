@@ -1,0 +1,8 @@
+<div style="text-align: center">
+  <%= image_tag @answer[:image] %>
+  <h1>You Rolled <%= @answer[:roll] %>!</h1>
+  <%= button_to "Try Another!", dice_roll_check_path %>
+  <br />
+  <br />
+  <h2>Explanation:</h2>
+</div>
