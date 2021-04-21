@@ -6,4 +6,7 @@
     <%= number_field_tag "number", nil, options = {:required => true, :min => 0} %> <%# the text field tag name in quotes must equal the instance variable params name, caps and all %>
     <%= submit_tag "Check" %>
   <% end %>
+  <br />
+  <br />
+  <%= link_to "Tidbits List", tidbits_path %>
 </div>
