@@ -1,0 +1,10 @@
+<div style="text-align: center">
+  <%= image_tag @answer[:image] %>
+  <h1>Your coin came up <%= @answer[:flip] %>!</h1>
+  <%= button_to "Flip again!", coin_flip_check_path %>
+  <br />
+  <%= link_to "Tidbit List", tidbits_path %>
+  <br />
+  <br />
+  <h2>Explanation:</h2>
+</div>

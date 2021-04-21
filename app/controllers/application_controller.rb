@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
     reversed_string = reversed_letters.join("")
   
     if reversed_string == @string.downcase
-      return @answer = "YES! '#{@string}' IS a palindrome!"
+      return @answer = "YES! '#{@string}' is a palindrome!"
     else
       return @answer = "NO! '#{@string}' is NOT a palindrome!"
     end
@@ -73,5 +73,16 @@ class ApplicationController < ActionController::Base
       return @answer ={ "dice_number": @dice_number, "roll1": @roll1, "roll2": @roll2, "total": @roll1 + @roll2, "image1": dice_images[@roll1], "image2": dice_images[@roll2] }
     end
   end
+
+  def coin_flip_check
+    @flip = rand(2) + 1
+    case
+      when @flip == 1
+        return @answer = { "flip": "heads", "image": "https://random-ize.com/coin-flip/us-dime/us-dime-front.jpg" }
+      when @flip == 2
+        return @answer = { "flip": "tails", "image": "https://random-ize.com/coin-flip/us-dime/us-dime-back.jpg" }
+    end
+  end
+
 
 end

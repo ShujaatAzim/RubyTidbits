@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   post '/largest_prime', to: "application#largest_prime_check", as: "largest_prime_check"
   get '/dice_roll', to: "static_pages#dice_roll", as: "dice_roll"
   post '/dice_roll', to: "application#dice_roll_check", as: "dice_roll_check"
+  get '/coin_flip', to: "static_pages#coin_flip", as: "coin_flip"
+  post '/coin_flip', to: "application#coin_flip_check", as: "coin_flip_check"
 end
