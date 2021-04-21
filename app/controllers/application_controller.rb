@@ -30,46 +30,27 @@ class ApplicationController < ActionController::Base
   end
   helper_method :palindrome
 
-
   def guessing_game_check
-    @input = params[:string]
+    @guess = params[:guess]
     @num = (rand(6) + 1).to_s
-    if @input == ""
+    if @guess == ""
       return @answer = "Please enter a valid number!"
-    elsif @input != @num
-      return @answer = "You guessed #{@input}, but the computer's number was #{@num}..."
+    elsif @guess != @num
+      return @answer = "You guessed #{@guess}, but the computer's number was #{@num}..."
     else
-      return @answer = "The computer's number is also #{@input}! You guessed the correct number!"
+      return @answer = "The computer's number is also #{@guess}! You guessed the correct number!"
     end
   end
   helper_method :guessing_game
 
   def largest_prime_check
     @input = params[:number].to_i
-
-    if @input === 0
-      return @answer = "#{@input} has infinite factors!"
-    elsif @input > 101 
-      new_number = Integer.sqrt(@input).round
-    else
-      new_number = @input/2
+    prime = @input
+    (2..Math.sqrt(@input).to_i).each do |i|
+      break if prime <= 1
+      prime /= i while (prime > i && prime % i == 0)
     end
-  
-    factors = []
-    primes = []
-  
-    for num in (2..new_number) 
-      if @input % num == 0
-        factors.push(num)
-      end
-    end
-  
-    factors.each do |num|
-      if (1..num).select { |d| num % d == 0 } == [1, num]
-        primes.push(num)
-      end
-    end
-    return @answer = "The largest prime factor of #{@input} is #{primes.max}!"
+    return @answer = "The largest prime factor of #{@input} is #{prime}!"
   end
   
 end
