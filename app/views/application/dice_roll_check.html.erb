@@ -4,6 +4,8 @@
     <h1>You Rolled <%= @answer[:roll] %>!</h1>
     <%= button_to "Roll again!", dice_roll_check_path(dice_number: 1) %>
     <br />
+    <%= button_to "Roll Two Dice", dice_roll_check_path(dice_number: 2) %>
+    <br />
     <%= link_to "Tidbit List", tidbits_path %>
     <br />
     <br />
@@ -17,6 +19,8 @@
     <h1>You Rolled <%= @answer[:roll1] %> and <%= @answer[:roll2] %>!</h1>
     <h2>Your total is <%= @answer[:total] %>!</h2>
     <%= button_to "Roll again!", dice_roll_check_path(dice_number: 2) %>
+    <br />
+    <%= button_to "Roll One Die", dice_roll_check_path(dice_number: 1) %>
     <br />
     <%= link_to "Tidbit List", tidbits_path %>
     <br />
