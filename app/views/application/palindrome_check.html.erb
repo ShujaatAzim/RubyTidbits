@@ -1,7 +1,7 @@
 <div style="text-align: center">
   <h1><%= @answer %></h1>
   <%= form_with url: palindrome_path, method: :post do %>
-    <%= label_tag "Enter another!" %>
+    <%= label_tag "Enter another:" %>
     <%= text_field_tag "string", nil %> <%# the text field tag name in quotes must equal the instance variable params name, caps and all %>
     <%= submit_tag "Check" %>
   <% end %>
@@ -10,4 +10,12 @@
   <br />
   <br />
   <h2>Explanation:</h2>
+  <p style="margin: 0em 20em 0em 20em ">
+    For this tidbit, I take a user's provided string and send it to the application controller as params. There, the method I have created makes use of
+    a case statement with several "when" conditions. If the user has not entered anything, they will be prompted to enter one. If the string is a single 
+    character long, the method returns a message for that. Otherwise, the method will then check to see if the provided string is palindromic. It makes
+    generous use of string manipulation methods, constructs an @answer instance variable object, and interpolates either "yes" or "no" before sending
+    the answer to the view page. The user is then free to try another string, without needing to go back to the original static view, thanks to the 
+    reusability of the custom rails routes.
+  </p>
 </div>

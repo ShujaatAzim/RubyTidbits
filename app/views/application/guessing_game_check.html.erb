@@ -1,7 +1,7 @@
 <div style="text-align: center">
   <h1><%= @answer %></h1>
     <%= form_with url: guessing_game_path, method: :post do %>
-    <%= label_tag "Guess again!" %>
+    <%= label_tag "Guess again:" %>
     <%= number_field_tag "guess", nil, options = {:required => true, :min => 0} %>
     <%= submit_tag "Check" %>
   <% end %>
@@ -10,4 +10,9 @@
   <br />
   <br />
   <h2>Explanation:</h2>
+  <p style="margin: 0em 20em 0em 20em ">
+    For this tidbit, I generate a number between one and ten inclusive. This number is checked against the user's number, which has been sent to
+    the application controller in params. The @answer instance variable object is constructed in the controller and sent to the view page, where it
+    is rendered. The user is free to try again without going back to the previous view, thanks to the reusability of the custom rails routes.
+  </p>
 </div>
