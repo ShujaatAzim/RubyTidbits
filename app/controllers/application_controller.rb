@@ -28,7 +28,6 @@ class ApplicationController < ActionController::Base
       return @answer = "NO! '#{@string}' is NOT a palindrome!"
     end
   end
-  helper_method :palindrome
 
   def guessing_game_check
     @guess = params[:guess]
@@ -38,10 +37,9 @@ class ApplicationController < ActionController::Base
     elsif @guess != @num
       return @answer = "You guessed #{@guess}, but the computer's number was #{@num}..."
     else
-      return @answer = "The computer's number is also #{@guess}! You guessed the correct number!"
+      return @answer = "The computer's number is also #{@guess}! You guessed the correct number! You Win!"
     end
   end
-  helper_method :guessing_game
 
   def largest_prime_check
     @input = params[:number].to_i
@@ -66,11 +64,22 @@ class ApplicationController < ActionController::Base
 
     if @dice_number == 1
       @roll = rand(6) + 1
-      return @answer = { "dice_number": @dice_number, "roll": @roll, "image": dice_images[@roll] }
+      return @answer = { 
+        "dice_number": @dice_number, 
+        "roll": @roll, 
+        "image": dice_images[@roll] 
+      }
     else
       @roll1 = rand(6) + 1
       @roll2 = rand(6) + 1
-      return @answer ={ "dice_number": @dice_number, "roll1": @roll1, "roll2": @roll2, "total": @roll1 + @roll2, "image1": dice_images[@roll1], "image2": dice_images[@roll2] }
+      return @answer = { 
+        "dice_number": @dice_number, 
+        "roll1": @roll1, 
+        "roll2": @roll2, 
+        "total": @roll1 + @roll2, 
+        "image1": dice_images[@roll1], 
+        "image2": dice_images[@roll2] 
+      }
     end
   end
 
@@ -78,9 +87,15 @@ class ApplicationController < ActionController::Base
     @flip = rand(2) + 1
     case
       when @flip == 1
-        return @answer = { "flip": "heads", "image": "https://random-ize.com/coin-flip/us-dime/us-dime-front.jpg" }
+        return @answer = { 
+          "flip": "heads", 
+          "image": "https://random-ize.com/coin-flip/us-dime/us-dime-front.jpg" 
+        }
       when @flip == 2
-        return @answer = { "flip": "tails", "image": "https://random-ize.com/coin-flip/us-dime/us-dime-back.jpg" }
+        return @answer = { 
+          "flip": "tails", 
+          "image": "https://random-ize.com/coin-flip/us-dime/us-dime-back.jpg" 
+        }
     end
   end
 
