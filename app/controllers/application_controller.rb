@@ -32,9 +32,7 @@ class ApplicationController < ActionController::Base
   def guessing_game_check
     @guess = params[:guess]
     @num = (rand(10) + 1).to_s
-    if @guess == ""
-      return @answer = "Please enter a valid number!"
-    elsif @guess != @num
+    if @guess != @num
       return @answer = "You guessed #{@guess}, but the computer's number was #{@num}..."
     else
       return @answer = "The computer's number is also #{@guess}! You guessed the correct number! You Win!"

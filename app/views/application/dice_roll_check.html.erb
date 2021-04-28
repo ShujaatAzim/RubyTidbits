@@ -1,16 +1,11 @@
 <% if @answer[:dice_number] == 1 %>
-  <div style="text-align: center">
+  <div class="app">
     <%= image_tag @answer[:image] %>
     <h1>You Rolled <%= @answer[:roll] %>!</h1>
     <%= button_to "Roll again!", dice_roll_check_path(dice_number: 1) %>
     <br />
-    <%= button_to "Roll Two Dice", dice_roll_check_path(dice_number: 2) %>
-    <br />
-    <%= link_to "Tidbit List", tidbits_path %>
-    <br />
-    <br />
     <h2>Explanation:</h2>
-    <p style="margin: 0em 20em 0em 20em ">
+    <p>
       For this tidbit, I generate one or two random numbers between one and six. Then, depending on the result, one or two images are shown
       based on their associated roll values. The numbers and their images are provided in the form of an @answer instance variable object. 
       While a separate view page for one die and two dice rolls would have worked, I instead used a singular view page and conditionally rendered 
@@ -18,23 +13,22 @@
       again or swap the number of dice being rolled without having to go back to the original view page. This is thanks to the reusability of the 
       custom rails routes.
     </p>
+    <br />
+    <%= button_to "Roll Two Dice", dice_roll_check_path(dice_number: 2) %>
+    <br />
+    <br />
+    <%= link_to "Tidbit List", tidbits_path %>
   </div>
 <% end%>
 
 <% if @answer[:dice_number] == 2 %>
-  <div style="text-align: center">
+  <div class="app">
     <%= image_tag @answer[:image1] %><%= image_tag @answer[:image2]%>
-    <h1>You Rolled <%= @answer[:roll1] %> and <%= @answer[:roll2] %>!</h1>
-    <h2>Your total is <%= @answer[:total] %>!</h2>
+    <h1>You Rolled a <%= @answer[:roll1] %> and a <%= @answer[:roll2] %>, for a total of <%= @answer[:total] %>!</h1>
     <%= button_to "Roll again!", dice_roll_check_path(dice_number: 2) %>
     <br />
-    <%= button_to "Roll One Die", dice_roll_check_path(dice_number: 1) %>
-    <br />
-    <%= link_to "Tidbit List", tidbits_path %>
-    <br />
-    <br />
     <h2>Explanation:</h2>
-    <p style="margin: 0em 20em 0em 20em ">
+    <p>
       For this tidbit, I generate one or two random numbers between one and six. Then, depending on the result, one or two images are shown
       based on their associated roll values. The numbers and their images are provided in the form of an @answer instance variable object. 
       While a separate view page for one die and two dice rolls would have worked, I instead used a singular view page and conditionally rendered 
@@ -42,5 +36,10 @@
       again or swap the number of dice being rolled without having to go back to the original view page. This is thanks to the reusability of the 
       custom rails routes.
     </p>
+    <br />
+    <%= button_to "Roll One Die", dice_roll_check_path(dice_number: 1) %>
+    <br />
+    <br />
+    <%= link_to "Tidbit List", tidbits_path %>
   </div>
 <% end %>

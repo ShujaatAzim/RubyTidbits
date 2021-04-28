@@ -1,4 +1,4 @@
-<div style="text-align: center">
+<div class="app">
   <h1><%= @answer %></h1>
   <br />
     <%= form_with url: largest_prime_path, method: :post do %>
@@ -8,14 +8,13 @@
   <% end %>
   <br />
   <br />
-  <%= link_to "Tidbits List", tidbits_path %>
-  <br />
-  <br />
   <h2>Explanation:</h2>
-  <p style="margin: 0em 20em 0em 20em ">
+  <p>
     For this tidbit, I created a function that returns the biggest prime factor of a provided number. The user's number is sent as params to the 
     application controller, and is then run through the function. The @answer instance variable is constructed in the controller, and is then sent to
     the view page where it is rendered as an interpolated string. The user is then free to provide another number without needing to go back to the 
     previous view page, thanks to the reusability of the custom rails routes. 
   </p>
+  <br />
+  <%= link_to "Tidbits List", tidbits_path %>
 </div>

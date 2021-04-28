@@ -1,4 +1,4 @@
-<div class="palindrome-check">
+<div class="app">
   <h1><%= @answer %></h1>
   <%= form_with url: palindrome_path, method: :post do %>
     <%= label_tag "Enter another:" %>
@@ -6,11 +6,9 @@
     <%= submit_tag "Check" %>
   <% end %>
   <br />
-  <%= link_to "Tidbits List", tidbits_path %>
-  <br />
   <br />
   <h2>Explanation:</h2>
-  <p style="margin: 0em 20em 0em 20em ">
+  <p>
     Palindrome - a word, phrase, or sequence that reads the same backward as forward.
     <br /><br />
     For this tidbit, I take a user's provided string and send it to the application controller as params. There, the method I have created makes use of
@@ -20,4 +18,6 @@
     sending the answer to the view page. The user is then free to try another string, without needing to go back to the original static view, thanks to 
     the reusability of the custom rails routes.
   </p>
+  <br />
+  <%= link_to "Tidbits List", tidbits_path %>
 </div>

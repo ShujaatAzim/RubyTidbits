@@ -1,15 +1,15 @@
-<div style="text-align: center">
+<div class="app">
   <%= image_tag @answer[:image] %>
   <h1>Your coin came up <%= @answer[:flip] %>!</h1>
   <%= button_to "Flip again!", coin_flip_check_path %>
   <br />
-  <%= link_to "Tidbit List", tidbits_path %>
-  <br />
   <br />
   <h2>Explanation:</h2>
-  <p style="margin: 0em 20em 0em 20em ">
+  <p>
     For this tidbit, I generated one of two random numbers (1 & 2). Depending on the result, I would show "heads" or "tails", 
     along with an associated image. This image was provided to the view, along with the number, from the main application controller.
     Upon reaching the view page, the @answer instance variable object is deconstructed and its information shown where appropriate.
   </p>
+  <br />
+  <%= link_to "Tidbit List", tidbits_path %>
 </div>
