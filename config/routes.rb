@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'static_pages#welcome'
+  get '/home', to: "static_pages#welcome", as: "home"
   get '/tidbits', to: "static_pages#tidbits", as: "tidbits"
   get '/palindrome', to: "static_pages#palindrome", as: "palindrome"
   post '/palindrome', to: "application#palindrome_check", as: "palindrome_check"

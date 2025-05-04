@@ -23,9 +23,9 @@ class ApplicationController < ActionController::Base
     reversed_string = reversed_letters.join("")
   
     if reversed_string == @string.downcase
-      return @answer = "YES! '#{@string}' is a palindrome!"
+      return @answer = "Yup, '#{@string}' is indeed a palindrome."
     else
-      return @answer = "NO! '#{@string}' is NOT a palindrome!"
+      return @answer = "Nope, '#{@string}' is not a palindrome."
     end
   end
 

@@ -8,12 +8,14 @@
   <br />
   <br />
   <h2>Explanation:</h2>
-  <p>
+  <p style="max-width: 600px;">
     Palindrome - a word, phrase, or sequence that reads the same backward as forward.
     <br /><br />
     For this tidbit, I take a user's provided string and send it to the application controller as params. There, the method I have created makes use of
     a case statement with several "when" conditions. If the user has not entered anything, they will be prompted to enter a string. If the string is a 
     single character long, the method returns a message for that. Otherwise, the method will then check to see if the provided string is palindromic. 
+  </p>
+  <p style="max-width: 600px;">
     It makes generous use of string manipulation methods, constructs an @answer instance variable object, and interpolates either "yes" or "no" before 
     sending the answer to the view page. The user is then free to try another string, without needing to go back to the original static view, thanks to 
     the reusability of the custom rails routes.
