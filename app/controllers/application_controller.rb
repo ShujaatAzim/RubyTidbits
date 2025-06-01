@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
       when @string == ""
         return @answer = "Please enter a string."
       when @string.length == 1
-        return @answer = "All single characters are, by definition, palindromes. So yes, '#{@string}' is a palindrome..."
+        return @answer = "All single characters are, by definition, palindromes!"
     end
     
     reversed_letters = []
@@ -23,19 +23,22 @@ class ApplicationController < ActionController::Base
     reversed_string = reversed_letters.join("")
   
     if reversed_string == @string.downcase
-      return @answer = "Yup, '#{@string}' is indeed a palindrome."
+      return @answer = "Yes, '#{@string}' is a palindrome."
     else
-      return @answer = "Nope, '#{@string}' is not a palindrome."
+      return @answer = "No, '#{@string}' is not a palindrome."
     end
   end
 
   def guessing_game_check
-    @guess = params[:guess]
-    @num = (rand(10) + 1).to_s
-    if @guess != @num
-      return @answer = "You guessed #{@guess}, but the computer's number was #{@num}..."
+    @guess = params[:guess].to_i
+    @num = rand(1..10)
+
+    if @guess > 10 || @guess < 1
+      return @answer = "Please enter a number between 1 and 10."
+    elsif @guess != @num
+      return @answer = "You guessed #{@guess}, but the number was #{@num}..."
     else
-      return @answer = "The computer's number is also #{@guess}! You guessed the correct number! You Win!"
+      return @answer = "The number is indeed #{@guess}, you win!"
     end
   end
 
@@ -46,7 +49,7 @@ class ApplicationController < ActionController::Base
       break if prime <= 1
       prime /= i while (prime > i && prime % i == 0)
     end
-    return @answer = "The largest prime factor of #{@input} is #{prime}!"
+    return @answer = "The largest prime factor of #{@input} is #{prime}."
   end
 
   def dice_roll_check

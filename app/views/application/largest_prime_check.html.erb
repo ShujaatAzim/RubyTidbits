@@ -9,12 +9,12 @@
   <br />
   <br />
   <h2>Explanation:</h2>
-  <p style="max-width: 600px;">
+  <p class="text-block">
     For this tidbit, I created a function that returns the biggest prime factor of a provided number. The user's number is sent as params to the 
     application controller, and is then run through the function. The @answer instance variable is constructed in the controller, and is then sent to
     the view page where it is rendered as an interpolated string. The user is then free to provide another number without needing to go back to the 
     previous view page, thanks to the reusability of the custom rails routes. 
   </p>
   <br />
-  <%= link_to "Tidbits List", tidbits_path %>
+  <h3><%= link_to "Back to Tidbits List", tidbits_path, class: "link" %></h3>
 </div>

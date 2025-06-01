@@ -3,10 +3,11 @@
   <head>
     <title>RubyTidbits</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= favicon_link_tag '/favicon.ico' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="/styles.css" />
     <%= javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true  %>
   </head>
 

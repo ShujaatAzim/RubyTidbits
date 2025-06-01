@@ -16,7 +16,15 @@ p {
   padding: 1.5rem;
 }
 
-a:link, a:visited {
+.link {
+  color: darkblue;
   text-decoration: none;
-  color: blue;
+}
+
+.link:visited {
+  color: darkblue;
+}
+
+.link:hover {
+  text-decoration: underline;
 }

@@ -5,11 +5,11 @@
     <%= button_to "Roll again!", dice_roll_check_path(dice_number: 1) %>
     <br />
     <h2>Explanation:</h2>
-    <p style="max-width: 600px;">
+    <p class="text-block">
       For this tidbit, I generate one or two random numbers between one and six. Then, depending on the result, one or two images are shown
       based on their associated roll values. The numbers and their images are provided in the form of an @answer instance variable object.
     </p>
-    <p style="max-width: 600px;">
+    <p class="text-block">
       While a separate view page for one die and two dice rolls would have worked, I instead used a singular view page and conditionally rendered 
       it based on the number of dice being rolled (this number is also provided in the @answer object). Additionally, the user is able to either roll 
       again or swap the number of dice being rolled without having to go back to the original view page. This is thanks to the reusability of the 
@@ -19,7 +19,7 @@
     <%= button_to "Roll Two Dice", dice_roll_check_path(dice_number: 2) %>
     <br />
     <br />
-    <%= link_to "Tidbit List", tidbits_path %>
+    <h3><%= link_to "Back to Tidbit List", tidbits_path, class: "link" %></h3>
   </div>
 <% end%>
 
@@ -30,11 +30,11 @@
     <%= button_to "Roll again!", dice_roll_check_path(dice_number: 2) %>
     <br />
     <h2>Explanation:</h2>
-    <p style="max-width: 600px;">
+    <p class="text-block">
       For this tidbit, I generate one or two random numbers between one and six. Then, depending on the result, one or two images are shown
       based on their associated roll values. The numbers and their images are provided in the form of an @answer instance variable object.
     </p>
-    <p style="max-width: 600px;"> 
+    <p class="text-block"> 
       While a separate view page for one die and two dice rolls would have worked, I instead used a singular view page and conditionally rendered 
       it based on the number of dice being rolled (this number is also provided in the @answer object). Additionally, the user is able to either roll 
       again or swap the number of dice being rolled without having to go back to the original view page. This is thanks to the reusability of the 
@@ -44,6 +44,6 @@
     <%= button_to "Roll One Die", dice_roll_check_path(dice_number: 1) %>
     <br />
     <br />
-    <%= link_to "Tidbit List", tidbits_path %>
+    <h3><%= link_to "Back to Tidbit List", tidbits_path, class: "link" %></h3>
   </div>
 <% end %>
